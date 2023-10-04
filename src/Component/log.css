@@ -1,0 +1,144 @@
+/* Default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+.body {
+    background: linear-gradient(rgb(0,0,0,0.7),rgb(0,0,0,0.7)),url('https://c4.wallpaperflare.com/wallpaper/853/708/973/abstract-bubble-orange-wallpaper-preview.jpg');z-index: -1;
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    padding-top: 140px;
+    /* min-height: 100vh; */
+}
+  
+    .container {
+        width: 100%;
+        /* height: 80vh; Adjusted body height */
+        overflow: hidden;
+        position: relative;
+    }
+  
+.particles {
+    position: absolute;
+    display: flex;
+    z-index: 1;
+    padding: 0 0px;
+    width: 100%; /* Ensure particles span the entire width */
+    justify-content: left; /* Center particles horizontally */
+}
+  
+.particles span {
+    position: relative;
+    bottom: 30px;
+    width: 30px;
+    height: 30px;
+    background: rgb(0,0,0,0.2);
+    box-shadow: 0 0 0 10px rgb(241, 68, 4,0.1), 0 0 50px orangered, -100px 0 orange,
+      100px 0 rgb(241, 68, 4,0.1);
+    margin: 0 4px;
+    border-radius: 50%;
+    animation: animate 15s ease infinite;
+    animation-duration: calc(90s / var(--i));
+}
+  
+@keyframes animate {
+    0% {
+      transform: translateY(120vh) scale(0) rotate(0deg);
+    }
+    20% {
+      transform: translateY(100vh) scale(1) rotate(180deg);
+    }
+    100% {
+      transform: translateY(-50vh) scale(0.5) rotate(360deg);
+    }
+}
+  
+.particles span:nth-child(even) {
+    background: orangered;
+    box-shadow: 0 0 0 10px #ff2d7544, 0 0 50px rgb(255, 198, 92), -100px 0 orangered;
+}
+  
+/* Responsive styles */
+  
+@media (max-width: 1400px) {
+    /* Adjust styles for screens with a maximum width of 1400px */
+    .container {
+        height: 70vh;
+    }
+  
+    .particles span {
+        width: 25px;
+        height: 25px;
+        bottom: 20px;
+    }
+}
+  
+@media (max-width: 1200px) {
+    /* Adjust styles for screens with a maximum width of 1200px */
+    .container {
+        height: 65vh;
+    }
+  
+    .particles span {
+        width: 20px;
+        height: 20px;
+        bottom: 15px;
+    }
+}
+  
+@media (max-width: 992px) {
+    /* Adjust styles for screens with a maximum width of 992px */
+    .container {
+        height: 60vh;
+    }
+  
+    .particles span {
+        width: 18px;
+        height: 18px;
+        bottom: 12px;
+    }
+}
+  
+@media (max-width: 768px) {
+    /* Adjust styles for screens with a maximum width of 768px */
+    .container {
+        height: 55vh;
+    }
+  
+    .particles span {
+        width: 15px;
+        height: 15px;
+        bottom: 10px;
+    }
+}
+  
+@media (max-width: 576px) {
+    /* Adjust styles for screens with a maximum width of 576px */
+    .container {
+        height: 50vh;
+    }
+  
+    .particles span {
+        width: 12px;
+        height: 12px;
+        bottom: 8px;
+    }
+}
+  
+@media (max-width: 290px) {
+    /* Adjust styles for screens with a maximum width of 290px */
+    .container {
+        height: 45vh;
+    }
+  
+    .particles span {
+        width: 10px;
+        height: 10px;
+        bottom: 5px;
+    }
+}
