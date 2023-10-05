@@ -9,13 +9,22 @@ function Offer(props) {
           <img className="img-fluid" style={{ width: '100%', height: '200px' }} src={props.img} alt="" />
 
             <div className="product-action">
-              <a className="btn btn-outline-dark btn-square" href="#"><i className="fa fa-shopping-cart"></i></a>
+            {
+                  localStorage.getItem('users')?
+                  <>
+                <a className="btn btn-outline-dark btn-square" href="#"><i className="fa fa-shopping-cart"></i></a>
+                  </>:
+                  <>
+                <a className="btn btn-outline-dark btn-square" href="#"><i className="fa-solid fa-user"></i></a>
+                  
+                  </>
+                }
               <a className="btn btn-outline-dark btn-square" href="#"><i className="far fa-heart"></i></a>
               <a className="btn btn-outline-dark btn-square" href="#"><i className="fa fa-sync-alt"></i></a>
               <a className="btn btn-outline-dark btn-square" href="#"><i className="fa fa-search"></i></a>
             </div>
           </div>
-          <div className="text-center py-4">
+          <div className="text-center py-4 ">
             <a className="h6 text-decoration-none text-truncate" href="#">
               {props.title}
             </a>
@@ -25,6 +34,13 @@ function Offer(props) {
               <h6 className="text-muted ml-2">
                 <del>${props.price}</del>
               </h6>
+              {
+                  localStorage.getItem('users')?
+                  <>
+                    <button className="text-light ms-3 me-1 bg-warning p-2" style={{ border:'1px solid transparent',borderRadius:'5px',fontWeight:'800' }}>Details</button>
+                  </>:
+                 null
+                }
             </div>
             <div className="d-flex align-items-center justify-content-center mb-1">
               <small className="fa fa-star text-warning mr-1"></small>

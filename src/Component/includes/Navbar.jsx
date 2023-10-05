@@ -7,10 +7,16 @@ import './bootstrap-grid.min.css'
 import './bootstrap-reboot.css'
 import './bootstrap-reboot.min.css'
 import './style.scss'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 // import './main.js'
 
 function Navbar() {
+    let navigate=useNavigate()
+    function logOut(){
+        localStorage.clear();
+        navigate('/login')
+
+    }
   return (
     <div>
           {/* <!-- Topbar Start --> */}
@@ -31,8 +37,18 @@ function Navbar() {
                         My Account
                         </button>
                         <ul className="dropdown-menu">
-                        <button className="dropdown-item" type="button"><Link to='/login'>Sign in</Link></button>
-                        <button className="dropdown-item" type="button"><Link to='register'>Sign up</Link></button>
+                        {
+                            localStorage.getItem('users')?
+                            <>
+                            <button className="dropdown-item" type="button"><Link to=''>Dashboard</Link></button>
+                            <hr />
+                         <button className="dropdown-item bg-danger mx-3 text-light" style={{ fontWeight:'900',width:'fit-content',borderRadius:'5px',boxShadow:'5px 5px 10px grey' }} type="button" onClick={logOut}>Log Out</button>
+                            </>:
+                            <>
+                            <button className="dropdown-item" type="button"><Link to='/login'>Sign in</Link></button>
+                            <button className="dropdown-item" type="button"><Link to='register'>Sign up</Link></button>
+                            </>
+                        }
                         </ul>           
                     </div>
                     <div className="btn-group mx-2">
@@ -103,7 +119,7 @@ function Navbar() {
             </div>
             <div className="col-lg-4 col-6 text-right">
                 <p className="m-0">Customer Service</p>
-                <h5 className="m-0">+012 345 6789</h5>
+                <h5 className="m-0">+234 811 6405 518</h5>
             </div>
         </div>
     </div>
