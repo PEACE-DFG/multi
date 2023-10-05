@@ -12,13 +12,14 @@
     background-size: cover;
     justify-content: center;
     align-items: center;
-    padding-top: 140px;
+    padding-top: 70px;
+    padding-bottom: 90px;
     /* min-height: 100vh; */
 }
   
     .container {
         width: 100%;
-        /* height: 80vh; Adjusted body height */
+        height: 80vh; 
         overflow: hidden;
         position: relative;
     }
@@ -68,7 +69,7 @@
 @media (max-width: 1400px) {
     /* Adjust styles for screens with a maximum width of 1400px */
     .container {
-        height: 70vh;
+        height: 80vh;
     }
   
     .particles span {
@@ -81,7 +82,7 @@
 @media (max-width: 1200px) {
     /* Adjust styles for screens with a maximum width of 1200px */
     .container {
-        height: 65vh;
+        height: 75vh;
     }
   
     .particles span {
@@ -94,7 +95,7 @@
 @media (max-width: 992px) {
     /* Adjust styles for screens with a maximum width of 992px */
     .container {
-        height: 60vh;
+        height: 70vh;
     }
   
     .particles span {
@@ -107,7 +108,7 @@
 @media (max-width: 768px) {
     /* Adjust styles for screens with a maximum width of 768px */
     .container {
-        height: 55vh;
+        height: 75vh;
     }
   
     .particles span {
@@ -120,7 +121,7 @@
 @media (max-width: 576px) {
     /* Adjust styles for screens with a maximum width of 576px */
     .container {
-        height: 50vh;
+        height: 70vh;
     }
   
     .particles span {
@@ -133,7 +134,7 @@
 @media (max-width: 290px) {
     /* Adjust styles for screens with a maximum width of 290px */
     .container {
-        height: 45vh;
+        height: 75vh;
     }
   
     .particles span {
