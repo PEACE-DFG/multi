@@ -1,4 +1,3 @@
-import React from 'react'
 import Logi from '../Component/Logi'
 
 function Login() {

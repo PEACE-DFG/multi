@@ -1,4 +1,3 @@
-import React from 'react'
 import Caro from '../Pages/Caro'
 import Feature from '../Pages/Feature'
 import Offered from '../Pages/Offered'

@@ -1,4 +1,3 @@
-import React from 'react'
 import Reg from '../Component/Reg'
 
 function Register() {

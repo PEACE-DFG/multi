@@ -1,4 +1,3 @@
-import React from 'react'
 import Save from '../Component/Save'
 
 function Saved() {

@@ -1,4 +1,3 @@
-import React from 'react'
 import './log.css'
 import Foot from '../Pages/foot';
 
