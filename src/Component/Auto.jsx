@@ -10,6 +10,7 @@ import './includes/style.scss'
 import './includes/animate.min.css'
 import Autos from '../Pages/Autos'
 import Bikes from '../Pages/Bikes'
+import Footer from "./footer"
 function Auto() {
   return (
     <div>
@@ -115,6 +116,7 @@ function Auto() {
     {/* api fetching */}
     <Autos/>
     <Bikes/>
+    <Footer/>
     </div>
   )
 }

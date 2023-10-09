@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom"
 function Lshoe(props) {
   return (
     <div className="container-fluid bg-light" style={{ backgroundColor:'rgb(254,216,177)' }}>
@@ -37,7 +37,7 @@ function Lshoe(props) {
               {
                 localStorage.getItem('users')?
                 <>
-                  <button className="text-light ms-3 me-1 bg-warning p-2" style={{ border:'1px solid transparent',borderRadius:'5px',fontWeight:'800' }}>Details</button>
+                    <button className="text-light ms-3 me-1 bg-warning p-2" style={{ border:'1px solid transparent',borderRadius:'5px',fontWeight:'800' }}><Link to={`../details/${props.id}`} >Details</Link></button>
                 </>:
                null
               }

@@ -12,6 +12,7 @@ import Decor from './Component/Decor'
 import Furniture from './Component/Furniture'
 import Watch from './Component/Watch'
 import Auto from './Component/Auto'
+import Singleproducts from './Pages/Singleproducts'
 
 
 function App() {
@@ -31,6 +32,8 @@ function App() {
       <Route path='/furnitures' element={<Furniture/>}></Route>
       <Route path='/watches' element={<Watch/>}></Route>
       <Route path='/automotives' element={<Auto/>}></Route>
+      <Route path='/details/:productId' element={<Singleproducts/>}></Route>
+
      </Routes>
     </div>
   )
