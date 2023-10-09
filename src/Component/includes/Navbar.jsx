@@ -140,14 +140,30 @@ function Navbar() {
                             <a href="#" className="nav-link dropdown-toggle" ><Link to='shirt'>Dresses</Link> </a>
                           
                       
-                        <a href="" className="nav-item nav-link">Shirts</a>
-                        <a href="" className="nav-item nav-link">Jeans</a>
-                        <a href="" className="nav-item nav-link">Swimwear</a>
-                        <a href="" className="nav-item nav-link">Sleepwear</a>
-                        <a href="" className="nav-item nav-link">Sportswear</a>
-                        <a href="" className="nav-item nav-link">Jumpsuits</a>
-                        <a href="" className="nav-item nav-link">Blazers</a>
-                        <a href="" className="nav-item nav-link">Jackets</a>
+                        <a href="" className="nav-item nav-link">
+                            <Link to='/phones'>Phones</Link>
+                        </a>
+                        <a href="" className="nav-item nav-link">
+                            <Link to="/laptops">Laptops</Link>
+                        </a>
+                        <a href="" className="nav-item nav-link">
+                            <Link to='/fragrances'>Fragrances</Link>
+                        </a>
+                        <a href="" className="nav-item nav-link">
+                            <Link to='/skincares'>Skincare</Link>
+                        </a>
+                        <a href="" className="nav-item nav-link">
+                            <Link to='/home-decorations'>Home decoration</Link>
+                        </a>
+                        <a href="" className="nav-item nav-link">
+                            <Link to="/furnitures">Furniture</Link>
+                        </a>
+                        <a href="" className="nav-item nav-link">
+                            <Link to="/watches">Watches & Jewelleries</Link>
+                        </a>
+                        <a href="" className="nav-item nav-link">
+                            <Link to="/automotives">Automotives</Link>
+                        </a>
                         <a href="" className="nav-item nav-link">
                             <Link to='/shoes'>Shoes</Link>
                         </a>
