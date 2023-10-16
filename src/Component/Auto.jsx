@@ -10,7 +10,7 @@ import './includes/style.scss'
 import './includes/animate.min.css'
 import Autos from '../Pages/Autos'
 import Bikes from '../Pages/Bikes'
-import Footer from "./footer"
+import Footer from "./Footer"
 function Auto() {
   return (
     <div>

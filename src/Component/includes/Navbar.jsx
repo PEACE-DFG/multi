@@ -7,11 +7,22 @@ import './bootstrap-grid.min.css'
 import './bootstrap-reboot.css'
 import './bootstrap-reboot.min.css'
 import './style.scss'
-import { Link,useNavigate } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './main.js'
 
 function Navbar() {
+    const [cartCount, setCartCount] = useState(0);
+
+    useEffect(() => {
+      // Load the cart from local storage
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      // Calculate the total number of items in the cart
+      const count = cart.length;
+      setCartCount(count);
+    }, []); // R
     let navigate=useNavigate()
+    
     function logOut(){
         localStorage.clear();
         navigate('/login')
@@ -199,8 +210,11 @@ function Navbar() {
                                 <span className="badge text-warning border border-secondary rounded-circle" style={{ paddingBottom:'2px' }}>0</span>
                             </a>
                             <a href="" className="btn px-0 ml-3">
-                                <i className="fas fa-shopping-cart text-warning"></i>
-                                <span className="badge text-warning border border-secondary rounded-circle" style={{ paddingBottom:'2px' }}>0</span>
+                        <Link to='/cart'>
+                        <i className="fas fa-shopping-cart text-warning"></i>
+                        
+                        </Link>
+                                <span className="badge text-warning border border-secondary rounded-circle" style={{ paddingBottom:'2px' }}>{cartCount}</span>
                             </a>
                         </div>
                     </div>

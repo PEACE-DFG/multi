@@ -9,7 +9,7 @@ import './includes/bootstrap-reboot.min.css'
 import './includes/style.scss'
 import './includes/animate.min.css'
 import Fragrances from '../Pages/Fragrances'
-import Footer from './footer'
+import Footer from './Footer'
 function Fragrance() {
   return (
     <div>

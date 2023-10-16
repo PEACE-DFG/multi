@@ -11,7 +11,7 @@ import './includes/animate.min.css'
 // import Shir from './Shir'
 import Shirt from '../Pages/Shirt'
 import Mshirts from '../Pages/Mshirts'
-import Footer from './footer'
+import Footer from './Footer'
 function Shirts() {
   return (
     <div>

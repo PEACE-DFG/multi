@@ -9,7 +9,7 @@ import './includes/bootstrap-reboot.min.css'
 import './includes/style.scss'
 import './includes/animate.min.css'
 import Furnitures from '../Pages/Furnitures'
-import Footer from './footer'
+import Footer from './Footer'
 function Furniture() {
   return (
     <div>

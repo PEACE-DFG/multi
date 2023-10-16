@@ -9,7 +9,7 @@ import './includes/bootstrap-reboot.min.css'
 import './includes/style.scss'
 import './includes/animate.min.css'
 import Decors from '../Pages/Decors'
-import Footer from './footer'
+import Footer from './Footer'
 import Lights from '../Pages/Lights'
 
 function Decor() {

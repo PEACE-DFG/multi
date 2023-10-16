@@ -9,7 +9,7 @@ import './includes/bootstrap-reboot.min.css'
 import './includes/style.scss'
 import './includes/animate.min.css'
 import Laptops from '../Pages/Laptops'
-import Footer from './footer'
+import Footer from './Footer'
 function Laptop() {
   return (
     <div>

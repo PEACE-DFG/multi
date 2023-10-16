@@ -13,7 +13,7 @@ function Offer(props) {
             {
                   localStorage.getItem('users')?
                   <>
-                <a className="btn btn-outline-dark btn-square" href="#"><i className="fa fa-shopping-cart"></i></a>
+                <a className="btn btn-outline-dark btn-square" href="#"><i className="fa fa-shopping-cart" onClick={() => addToCart(props)}></i></a>
                   </>:
                   <>
                 <a className="btn btn-outline-dark btn-square" href="#"><i className="fa-solid fa-user"></i></a>
@@ -31,9 +31,9 @@ function Offer(props) {
             </a>
             <h6><b>Brand:</b>{props.brand}</h6>
             <div className="d-flex align-items-center justify-content-center mt-2">
-              <h5>${props.discount}</h5>
+              <h5>&#8358;{props.discount}</h5>
               <h6 className="text-muted ml-2">
-                <del>${props.price}</del>
+                <del>&#8358;{props.price}</del>
               </h6>
               {
                   localStorage.getItem('users')?

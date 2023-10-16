@@ -10,7 +10,7 @@ import './includes/style.scss'
 import './includes/animate.min.css'
 import Watches from '../Pages/Watches'
 import Mens from '../Pages/Mens'
-import Footer from './footer'
+import Footer from './Footer'
 import Jewels from '../Pages/Jewels'
 function Watch() {
   return (

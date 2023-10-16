@@ -9,7 +9,7 @@ import './includes/bootstrap-reboot.min.css'
 import './includes/style.scss'
 import './includes/animate.min.css'
 import Phones from '../Pages/Phones'
-import Footer from './footer'
+import Footer from './Footer'
 function Phone() {
   return (
     <div>

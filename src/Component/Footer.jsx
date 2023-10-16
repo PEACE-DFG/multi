@@ -14,7 +14,7 @@ function Footer() {
     <div>
         
     {/* <!-- Vendor Start --> */}
-    <div className="container-fluid  py-5" style={{ backgroundColor:'rgb(254,216,177)' }}>
+    {/* <div className="container-fluid  py-5" style={{ backgroundColor:'rgb(254,216,177)' }}>
         <div className="row ">
             <div className="col " >
                 <div className="owl-carousel vendor-carousel "style={{ display:'flex',justifyContent:'space-evenly',flexWrap:'wrap' }}>
@@ -37,7 +37,7 @@ function Footer() {
                 </div>
             </div>
         </div>
-    </div>
+    </div> */}
     {/* <!-- Vendor End --> */}
 
 
