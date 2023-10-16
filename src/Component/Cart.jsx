@@ -127,7 +127,7 @@ function Cart() {
                 </div>
               </div>
               <div className="col-md-4 mb-3">
-                <div class="card text-dark bg-light mb-3 p-3" style={{ maxWidth: '18rem', boxShadow: '5px 5px 15px grey' }}>
+                <div class="card text-dark bg-light mb-3 p-3" style={{ maxWidth:'18rem', boxShadow: '5px 5px 15px grey' }}>
                   <div class="card-header"><b>CART SUMMARY</b></div>
                   <div class="card-body  " style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <h6 class="card-title mt-1 ms-0">SUBTOTAL</h6>
