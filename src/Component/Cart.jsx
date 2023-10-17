@@ -21,13 +21,19 @@ function Cart() {
     if (Array.isArray(storedCart)) {
       setCartItems(storedCart);
     }
+  }, []);
 
-    // Calculate the total price
+  useEffect(() => {
+    // Calculate the total price when cartItems change
     const total = cartItems.reduce((acc, item) => {
-      return acc + (item.totalPrice || 0);
+      return acc + calculateTotalPrice(item);
     }, 0);
     setTotalPrice(total);
   }, [cartItems]);
+
+  const calculateTotalPrice = (item) => {
+    return (item.price || 0) * (item.quantity || 1);
+  };
 
   const addToCart = (product) => {
     const updatedCart = [...cartItems, product];
@@ -40,16 +46,11 @@ function Cart() {
     updatedCart.splice(index, 1);
     setCartItems(updatedCart);
     localStorage.setItem('cart', JSON.stringify(updatedCart));
-  }
-
-  const calculateTotalPrice = (item) => {
-    return (item.price || 0) * (item.quantity || 1);
   };
 
   const increaseQuantity = (index) => {
     const updatedCart = [...cartItems];
     updatedCart[index].quantity = (updatedCart[index].quantity || 1) + 1;
-    updatedCart[index].totalPrice = calculateTotalPrice(updatedCart[index]);
     setCartItems(updatedCart);
     localStorage.setItem('cart', JSON.stringify(updatedCart));
   };
@@ -61,15 +62,13 @@ function Cart() {
     } else {
       updatedCart[index].quantity = 1;
     }
-    updatedCart[index].totalPrice = calculateTotalPrice(updatedCart[index]);
     setCartItems(updatedCart);
     localStorage.setItem('cart', JSON.stringify(updatedCart));
   };
-
   return (
-    <div>
+    <div style={{backgroundColor:'rgb(211,211,211)' }}>
       {cartItems.length > 0 ? (
-        <div className="container">
+        <div className="container pt-3" >
           <section>
             <div className="row" style={{ overflow:'auto',height:'400px' }}>
               <div className="col-md-8 mb-3">

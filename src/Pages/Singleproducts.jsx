@@ -52,7 +52,7 @@ function Singleproducts() {
     <div>
       <div className="container pt-5 pb-5">
         <h2 className=" text-uppercase mb-4">Product Details</h2>
-        <div className="row align-items-center" style={{ overflow:'auto',height:'300px' }}>
+        <div className="row align-items-center" style={{ overflow:'auto',height:'350px' }}>
           <div className="col-lg-6 align-items-center">
             {isProduct && (
               <img
