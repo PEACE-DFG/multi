@@ -111,7 +111,7 @@ function Navbar() {
                   {localStorage.getItem('users') ? (
                     <>
                       <button className="dropdown-item" type="button">
-                        <Link style={text} to="">Dashboard</Link>
+                        <Link style={text} to="/user_dashboard">Dashboard</Link>
                       </button>
                       <hr />
                       <button

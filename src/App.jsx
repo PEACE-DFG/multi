@@ -15,6 +15,7 @@ import Auto from './Component/Auto'
 import Singleproducts from './Pages/Singleproducts'
 import Cart from './Component/Cart'
 import './main.css'
+import Userdashboard from './Pages/Userdashboard'
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
       <Route path='/automotives' element={<Auto/>}></Route>
       <Route path='/details/:productId' element={<Singleproducts/>}></Route>
     <Route path='/cart' element={<Cart/>}></Route>
+    <Route path="/user_dashboard" element={<Userdashboard/>}></Route>
      </Routes>
     </div>
   )
