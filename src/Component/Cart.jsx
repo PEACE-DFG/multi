@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './includes/navbar.css';
 import './includes/style.min.css';
 import './includes/bootstrap.css';
@@ -46,6 +47,9 @@ function Cart() {
     updatedCart.splice(index, 1);
     setCartItems(updatedCart);
     localStorage.setItem('cart', JSON.stringify(updatedCart));
+
+    // Reload the page after removing an item from the cart
+    window.location.reload();
   };
 
   const increaseQuantity = (index) => {
@@ -66,7 +70,7 @@ function Cart() {
     localStorage.setItem('cart', JSON.stringify(updatedCart));
   };
   return (
-    <div style={{backgroundColor:'rgb(211,211,211)' }}>
+    <div style={{backgroundColor:'rgb(211,211,211,0.1)' }}>
       {cartItems.length > 0 ? (
         <div className="container pt-3" >
           <section>
@@ -156,7 +160,9 @@ function Cart() {
                 <h6>Browse Our Categories and discover our best deals</h6>
               </div>
               <div>
+                <Link to='/'>
                 <button className="btn btn-warning text-light mt-4 mb-3" style={{ fontWeight: '900' }}>START SHOPPING</button>
+                </Link>
               </div>
             </div>
           </div>

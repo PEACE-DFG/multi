@@ -8,8 +8,8 @@ import './includes/bootstrap-reboot.css'
 import './includes/bootstrap-reboot.min.css'
 import './includes/style.scss'
 import './includes/animate.min.css'
-import Decors from '../Pages/Decors'
 import Footer from './Footer'
+import Decors from '../Pages/Decors'
 import Lights from '../Pages/Lights'
 
 function Decor() {
@@ -124,7 +124,7 @@ function Decor() {
     <Lights/>
     </div>
     <Footer/>
-    </div>
+        </div>
   )
 }
 

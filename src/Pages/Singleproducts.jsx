@@ -13,6 +13,7 @@ function Singleproducts() {
     return storedCart ? JSON.parse(storedCart) : [];
   });
   const [showToast, setShowToast] = useState(false); // Add state for the toast
+  const [isProductAdded, setIsProductAdded] = useState(false); // Check if the product is already in the cart
 
   function singlePro() {
     axios.get(`https://dummyjson.com/products/${productId}`).then((res) => {
@@ -30,21 +31,30 @@ function Singleproducts() {
     setSelectedImageIndex(index);
   };
 
-  const addToCart = () => {
+  const addToCart = (e) => {
+    e.preventDefault(); // Prevent the default form submission behavior
+
     if (isProduct) {
-      // Add the product to the cart state
-      setCart([...cart, product]);
+      // Check if the product is already in the cart
+      if (!cart.some((item) => item.id === product.id)) {
+        // Add the product to the cart state
+        setCart([...cart, product]);
 
-      // Store the updated cart in local storage
-      localStorage.setItem("cart", JSON.stringify([...cart, product]));
+        // Store the updated cart in local storage
+        localStorage.setItem("cart", JSON.stringify([...cart, product]));
 
-      // Show the toast
-      setShowToast(true);
+        // Show the toast
+        setShowToast(true);
 
-      // Hide the toast after 2 seconds
-      setTimeout(() => {
-        setShowToast(false);
-      }, 2000);
+        // Hide the toast after 2 seconds and then refresh the page
+        setTimeout(() => {
+          setShowToast(false);
+          window.location.reload(); // Refresh the page
+        }, 2000);
+      } else {
+        // Product is already in the cart, set a flag to display a message
+        setIsProductAdded(true);
+      }
     }
   };
 
@@ -52,13 +62,13 @@ function Singleproducts() {
     <div>
       <div className="container pt-5 pb-5">
         <h2 className=" text-uppercase mb-4">Product Details</h2>
-        <div className="row align-items-center" style={{ overflow:'auto',height:'350px' }}>
+        <div className="row align-items-center" style={{ overflow: "auto", height: "350px" }}>
           <div className="col-lg-6 align-items-center">
             {isProduct && (
               <img
                 src={product.images[selectedImageIndex]}
                 alt=""
-                className="img-fluid rounded w-50 h-50"
+                className="img-fluid rounded w-50 h-25"
               />
             )}
             <div className="d-flex justify-content-center mt-3 align-items-center flex-wrap">
@@ -94,44 +104,45 @@ function Singleproducts() {
                   <strong>Rating:</strong> {product.rating}
                 </p>
                 <div>
-                  {cart.includes(product) ? (
-                   <>
-                       {showToast && ( // Show the toast based on the state
-                        <div className="toast-container position-fixed bottom-0 end-0 p-3 bg-success">
-                          <div
-                            id="liveToast"
-                            className="toast show"
-                            role="alert"
-                            aria-live="assertive"
-                            aria-atomic="true"
-                          >
-                            <div className="toast-header">
-                              <strong className="me-auto ">Message</strong>
-                              <small>1 seconds ago</small>
-                              <button
-                                type="button"
-                                className="btn-close"
-                                data-bs-dismiss="toast"
-                                aria-label="Close"
-                              ></button>
-                            </div>
-                            <div className="toast-body">Product added to the cart</div>
-                          </div>
+                  {isProductAdded ? (
+                    // Display a message if the product is already added
+                    <p className="text-danger">Product has already been added to the cart.</p>
+                  ) : showToast ? (
+                    // Show the toast based on the state
+                    <div className="toast-container position-fixed bottom-0 end-0 p-3">
+                      <div
+                        id="liveToast"
+                        className="toast show"
+                        role="alert"
+                        aria-live="assertive"
+                        aria-atomic="true"
+                      >
+                        <div className="toast-header">
+                          <strong className="me-auto ">Alert</strong>
+                          <small>1 second ago</small>
+                          <button
+                            type="button"
+                            className="btn-close"
+                            data-bs-dismiss="toast"
+                            aria-label="Close"
+                            onClick={() => {
+                              setShowToast(false);
+                              window.location.reload(); // Refresh the page
+                            }}
+                          ></button>
                         </div>
-                      )}
-                   </>
+                        <div className="toast-body">Product has been added to the cart</div>
+                      </div>
+                    </div>
                   ) : (
-                    <>
+                    <form onSubmit={addToCart}> {/* Add a form element */}
                       <button
                         className="btn btn-warning text-light"
-                        onClick={() => {
-                          addToCart();
-                        }}
+                        type="submit" // Add type="submit" to the button
                       >
                         Add to Cart
                       </button>
-                    
-                    </>
+                      </form>
                   )}
                 </div>
               </div>

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 
 function Mauto(props) {
+ 
   return (
     <div>
           <div className="container-fluid bg-light" style={{ backgroundColor:'rgb(254,216,177)' }}>
@@ -14,11 +15,19 @@ function Mauto(props) {
          {
            localStorage.getItem('users')?
            <>
-         <a className="btn btn-outline-dark btn-square" href="#"><i className="fa fa-shopping-cart"></i></a>
+          
+           <a className="btn btn-outline-dark btn-square" type="submit" href="">
+          
+           <Link to={`../details/${props.id}`}><i className="fa fa-shopping-cart"></i></Link>
+
+            </a>
            </>:
            <>
-         <a className="btn btn-outline-dark btn-square" href="#"><i className="fa-solid fa-user"></i></a>
-           
+         <a className="btn btn-outline-dark btn-square" href="#">
+          <Link to='/register'>
+          <i className="fa-solid fa-user"></i>
+          </Link>
+          </a>
            </>
          }
          <a className="btn btn-outline-dark btn-square" href="#"><i className="far fa-heart"></i></a>

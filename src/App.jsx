@@ -14,6 +14,7 @@ import Watch from './Component/Watch'
 import Auto from './Component/Auto'
 import Singleproducts from './Pages/Singleproducts'
 import Cart from './Component/Cart'
+import './main.css'
 
 
 function App() {

@@ -12,7 +12,10 @@ function Lshoe(props) {
               {
                 localStorage.getItem('users')?
                 <>
-              <a className="btn btn-outline-dark btn-square" href="#"><i className="fa fa-shopping-cart"></i></a>
+              <a className="btn btn-outline-dark btn-square" href="#">
+              <Link to={`../details/${props.id}`}><i className="fa fa-shopping-cart"></i></Link>
+
+                </a>
                 </>:
                 <>
               <a className="btn btn-outline-dark btn-square" href="#"><i className="fa-solid fa-user"></i></a>
