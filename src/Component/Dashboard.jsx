@@ -1,21 +1,19 @@
-import React from 'react'
+import React from 'react';
+import './dashboard.css';
+import Footer from './Footer' 
+import Account from './Account';
 
-function Dashboard(){
-  return(
+function Dashboard() {
+
+
+  return (
     <>
 
-    <div className="container">
-      <div className="row">
-        <div className="col-4">
-          
-        </div>
-        <div className="col-8">
-
-        </div>
-      </div>
-    </div>
-    
+    <Account/>
+      <Footer/>
+      
     </>
-  )
+  );
 }
-export default Dashboard
+
+export default Dashboard;
