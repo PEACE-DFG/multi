@@ -63,7 +63,6 @@ function Reg() {
         return;
       }
 
-      // Register the user if email is unique
       const newUser = {
         Name: user.Name,
         Email: user.Email,
